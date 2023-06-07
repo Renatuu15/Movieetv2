@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;;
+    margin: 4rem auto;
+    padding: 2em;
+
+}
+
+
+section {
+    margin: 4em auto;
+
+}
+
+p {
+    color: black;
+}
+
+form {
+    width: 60%;
+
+}
+
+  button {
+    background-color: #fff;
+    width: 15%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5em;
+    cursor: pointer;
+    margin: 10px 5px;
+  }
+  
+  button:active {
+    background-color: #00FFFF;
+  }
+
+  .current {
+    background-color: #ccc;
+  }
+
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  button#prev[disabled],
+button#next[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.item {
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+
+
+#conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  
+}
+
+  
+ 
+  #botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    
+  }
+  
+  #botoes button {
+    margin: 0 0.5em;
+    width: 18%;
+  }
+
+  #botoes p {
+    text-align: center;
+  }
+
+  
+  .container{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    margin: 2em auto;
+    padding: 20px;
+    height: 650px;
+    background-color:#23252b;
+    border: 2px solid #00FFFF;
+  }
+
+  .container img { 
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: -1.5px 1.5px 1px  #F20746;
+    
+  }
+
+  .container img,
+  .legends { 
+    border-radius: 10px;
+   
+  }
+  .legends { 
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    display: flex;
+    margin: 0 1em;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px -1px 1px  #F20746;
+    background-color: #23252b;
+    padding: 10px;
+    
+  }
+  .legends p {
+    width: 100%;
+    text-align: justify;
+    color:#fff;
+    font-size: max(1vw,0.7em);
+    letter-spacing: 0;
+    
+    /* outros estilos de texto */
+  }
+
+
+
+  .noticias { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1em;
+    height: 600px;
+    background-color: #000;
+}
+
+.legends button { 
+
+  width: 100%;
+  max-width: 100px;
+  height: 30px;
+  color: black;
+ 
+}
+
+@media (max-width: 768px) { 
+
+  .container { 
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .container img { 
+    width: 100%;
+    max-width: 350px;
+    margin: 1em auto;
+    box-shadow:   -1px 0px 0px  #F20746;
+  }
+ 
+}

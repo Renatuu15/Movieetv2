@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieeTV - Contato</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="stylesheet" href="./styles/contato.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+  <!-- Unicons CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="index.html" class="logo">MovieeTV</a>
+
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="filmes.html">Filmes</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+
+      <i class="uil uil-search search-icon" id="searchIcon"></i>
+      <div class="search-box">
+        <i class="uil uil-search search-icon"></i>
+        <input type="text" placeholder="Search here..." />
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="sobre">
+      <h2>Fale com nossa equipe</h2>
+        <p>E-mail contato@movieetv.com
+          Você pode utilizar esse formulário de contato para pedir ajuda, dar sugestões, reportar bugs no site,
+          fazer reclamações, denunciar usuários que estejam usando o Movieetv de forma inadequada e muito mais,
+          use da forma que achar conveniente.
+          Será um prazer atender às suas necessidades. </p>
+    </section>
+    <section class="sobre">
+      <h2 >Publicidade</h2>
+      <p>Para anunciar no MovieeTV entre em contato no e-mail comercial@movieetv.com.Sua marca será divulgada no Inicio
+        do site ! Nós nos esforçamos para oferecer um excelente atendimento ao cliente e estamos sempre disponíveis para
+        ajudar a esclarecer
+        quaisquer dúvidas ou preocupações que você possa ter. Acreditamos que nosso produto será a escolha certa para
+        você
+      </p>
+    </section>
+    <section class="section-form"> 
+      <h2 class="form-title">Formulário para contato</h2>
+      <form action="/api/v2/form" method="post" id="meuFormulario">
+        <label for="nome">Nome
+          <input type="text" id="name" name="nome" placeholder="Digite seu nome">
+        </label>
+        <label for="email">Email
+          <input type="email" id="email" name="email" placeholder="Digite seu email">
+        </label>
+        <label for="assunto">Assunto
+          <input type="text" name="assunto" id="assunto" placeholder="Digite o assunto?">
+        </label>
+        <label for="mensagem">Mensagem
+        <textarea name="mensagem" id="mensagem" cols="300" rows="10" placeholder="Digite uma mensagem"></textarea>
+        </label>
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+  <script>
+    // adicionar evento de envio ao formulário
+    var formulario = document.getElementById('meuFormulario');
+    formulario.addEventListener('submit', function(event) {
+      event.preventDefault(); // evitar que o formulário seja enviado de forma tradicional
+
+      // criar objeto XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+
+      // definir URL da API REST
+      var url = 'https://loyal-root-production.up.railway.app/api/v2/form';
+
+      // definir método HTTP
+      var method = 'POST';
+
+      // abrir conexão com a API REST
+      xhr.open(method, url);
+
+      // definir cabeçalho de tipo de conteúdo
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      // obter dados do formulário
+      var data = {
+        nome: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        assunto: document.getElementById('assunto').value,
+        mensagem: document.getElementById('mensagem').value
+      };
+
+      // converter dados em JSON e enviar
+      xhr.send(JSON.stringify(data));
+
+      // adicionar evento de escuta para a resposta do servidor
+      xhr.addEventListener('load', function() {
+        if (xhr.status === 200) {
+          // a resposta do servidor foi bem-sucedida
+          console.log(xhr.responseText);
+        } else {
+          // a resposta do servidor falhou
+          console.error('Erro ao enviar dados do formulário');
+        }
+      });
+    });
+  </script>
+</body>
+<footer>
+  <div class="footer-container">
+    <div class="row-footer">
+      <!-- Footer col-->
+      <div class="col-footer">
+      <ul>
+        <li><h4>Empresa</h4></li>
+        <li><a href="">Quem somos</a></li>
+        <li><a href="">Contato</a></li>
+        <li><a href="">Nossos serviço</a></li>
+        <li><a href="">Politica de privacidade</a></li>
+       </ul>
+      </div>
+      <!-- Footer col-->
+      <!-- Footer col-->
+      <div class="col-footer">
+        <ul><li><h4>Filmes</h4></li>
+        <li><a href="">Ação</a></li>
+        <li><a href="">Aventura</a></li>
+        <li><a href="">Suspense</a></li>
+        <li><a href="">Romance</a></li>
+       </ul>
+      </div>
+      <!-- Footer col-->
+      <div class="col-footer">
+        <ul><li><h4>Plataforma</h4></li>
+        <li><a href="">Netflix</a></li>
+        <li><a href="">Amazon</a></li>
+        <li><a href="">Disney PLUS</a></li>
+        <li><a href="">Star +</a></li>
+       </ul>
+      </div>
+
+      <div class="logo-footer">
+        <h3>MovieeTV</h3>
+        <a href="#"></a> 
+        <a href="#"><img src="./imgs/icons8-instagram (1).svg" alt=""></a>
+        <a href="#"><img src="./imgs/icons8-facebook (1).svg" alt=""></a>    
+      </div>
+  </div>
+</footer>
+
+</html>
